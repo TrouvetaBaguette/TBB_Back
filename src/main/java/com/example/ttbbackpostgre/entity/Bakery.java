@@ -1,14 +1,26 @@
 package com.example.ttbbackpostgre.entity;
 
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.List;
+@Data
+@Table(name= "Bakery_Table")
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Bakery {
-    private final int id;
+    @Id
+    @GeneratedValue
+    int id;
     String name;
     String address;
     String phonenumber;
-    final String Insee;
+    String Insee;
+    @OneToMany
     List<Product> products;
 
     public Bakery(int id, String name, String address, String insee) {
