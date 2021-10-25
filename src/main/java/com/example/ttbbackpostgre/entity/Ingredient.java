@@ -1,28 +1,29 @@
 package com.example.ttbbackpostgre.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+
+@Data
+@Table(name= "Ingredient_Table")
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Ingredient {
-    final private String name;
+    @Id
+    @GeneratedValue
+    private String name;
     private String ingredient_quantity;
 
-    public Ingredient(String name, String quantity) {
-        this.name = name;
-        this.ingredient_quantity = quantity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getQuantity() {
-        return ingredient_quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.ingredient_quantity = quantity;
-    }
 
     @Override
     public boolean equals(Object o) {
