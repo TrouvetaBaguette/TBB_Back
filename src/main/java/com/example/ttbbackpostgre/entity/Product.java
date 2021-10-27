@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String label;
     private int idbakery;
@@ -26,6 +26,27 @@ public class Product {
     private List<Ingredient> ingredients;
     private int product_quantity;
 
+    public int getId() {
+        return id;
+    }
 
+    public String getLabel() {
+        return label;
+    }
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }
