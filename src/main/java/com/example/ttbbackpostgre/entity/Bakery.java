@@ -22,6 +22,8 @@ public class Bakery {
     String Insee;
     @OneToMany
     List<Product> products;
+    @OneToMany
+    List<Product> unsolds;
 
     public Bakery(int id, String name, String address, String insee) {
         this.id = id;
@@ -64,5 +66,9 @@ public class Bakery {
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public void setUnsolds(List<Product> unsolds) {
+        this.unsolds = unsolds;
     }
 }

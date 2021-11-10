@@ -5,7 +5,6 @@ import com.example.ttbbackpostgre.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 @CrossOrigin(origins = "http://localhost:5050")
 @RestController
 public class ProductController {
@@ -32,12 +31,12 @@ public class ProductController {
         return service.getProductByLabel(name);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/product/update")
     public Product updateProduct(@RequestBody Product product) {
         return service.updateProduct(product);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/product/delete/{id}")
     public void deleteProduct(@PathVariable int id) {
         service.deleteProduct(id);
     }
