@@ -67,4 +67,8 @@ public class Bakery {
     public List<Product> getProducts() {
         return products;
     }
+
+    public void setUnsolds(List<Product> unsolds) {
+        this.unsolds = unsolds;
+    }
 }
