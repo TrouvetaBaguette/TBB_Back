@@ -19,8 +19,11 @@ public class Client {
     int id;
     String name;
     String address;
-    @OneToMany
-     List<String> allergies = new ArrayList<>();
+    @ElementCollection
+    @CollectionTable(
+            name="ALLERGIE"
+    )
+    List<String> allergies = new ArrayList<>();
 
     public Client(int id, String name, String address) {
         this.id = id;
@@ -28,7 +31,35 @@ public class Client {
         this.address = address;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public List<String> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<String> allergies) {
+        this.allergies = allergies;
+    }
 }

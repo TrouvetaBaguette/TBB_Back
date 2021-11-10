@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,7 +24,7 @@ public class Product {
     private int weight;
     private int price;
     @OneToMany
-    private List<Ingredient> ingredients;
+    private List<Ingredient> ingredients = new ArrayList<>();
     private int product_quantity;
 
     public int getId() {
