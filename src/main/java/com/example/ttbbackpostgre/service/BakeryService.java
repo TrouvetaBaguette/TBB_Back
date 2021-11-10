@@ -38,6 +38,7 @@ public class BakeryService {
         existingBakery.setName(bakery.getName());
         existingBakery.setAddress(bakery.getAddress());
         existingBakery.setPhonenumber(bakery.getPhonenumber());
+        existingBakery.setUnsolds(bakery.getProducts());
         return repository.save(existingBakery);
     }
 }

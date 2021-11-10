@@ -22,6 +22,8 @@ public class Bakery {
     String Insee;
     @OneToMany
     List<Product> products;
+    @OneToMany
+    List<Product> unsolds;
 
     public Bakery(int id, String name, String address, String insee) {
         this.id = id;
